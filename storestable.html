@@ -1,0 +1,212 @@
+<html>
+
+<head>
+<title>Stores Table | Starbucks</title>
+<link rel = "stylesheet"
+   type = "text/css"
+   href = "style.css" />
+        
+</head>
+
+    <body>
+        
+    <div class="nav">
+<div class="topnav">
+    <a href="datadict.html">DATABASE DICTIONARY</a>
+    <a href="https://starbucks.com">STARBUCKS.COM</a>
+    <a href="more.html">MORE</a>
+    <a href="index.html" class = "logo"><img src="Starbucks-Logo-PNG-File.png" height="80" width="80"></a>
+</div>
+</div>
+    
+<svg height="10" width="10000" style="stroke:rgb(0,0,0);stroke-width:2"> <line x1="0" y1="0" x2="10000" y2="0" style="stroke:rgb(0,114,65);stroke-width:6"/>
+</svg>
+
+        <br><br><br>
+        <div class="container">
+             <div class="tab tab-2">
+                <div class = "datainput">
+                Store ID: <input class = "input" type="text" name="storeid" id="storeid"><br><br>
+                Store Address: <input class = "input" type="text" name="address" id="address"><br><br>
+                </div>
+                <button onclick="addHtmlTableRow();">Add</button>
+                <button onclick="editHtmlTbleSelectedRow();">Edit</button>
+                <button onclick="removeSelectedRow();">Remove</button>
+            </div>
+            <br><br>
+            <div class="tab tab-1">
+                
+        
+        <hr>
+        <br>
+                
+            <table id="table" border="0" style="width:100%">
+        <tr>
+        <th><b>Store ID</b></th>
+        <th><b>Store Address</b></th>
+        </tr>
+            
+        <tr>
+        <td>00001</td>
+        <td>100 E Kirkwood Drive, Bloomington, IN 47401</td>
+        </tr>
+        
+         <tr>
+        <td>00002</td>
+        <td>6777 Jefferson Ave, Naperville, IL 60564</td>
+        </tr>
+            
+        <tr>
+        <td>00003</td>
+        <td>455 N. Walnut St, Bloomington, IN 47404</td>
+        </tr>
+            
+        <tr>
+        <td>00004</td>
+        <td>11400 Pennsylvania Ave, Washington DC, 20001</td>
+        </tr>
+            
+        <tr>
+        <td>00005</td>
+        <td>437 May Street, Louisville, KY 41649</td>
+        </tr>
+        
+        <tr>
+        <td>00006</td>
+        <td>1270 Quincy Street, Norristown, PA 19403</td>
+        </tr>
+        
+          <tr>
+        <td>00007</td>
+        <td> 993 Paradot Pkwy, Asheville NC, 28801</td>
+        </tr>
+            
+              <tr>
+        <td>00008</td>
+        <td>1676 Turkey Pen Road, New York, NY 10016</td>
+        </tr>
+            
+              <tr>
+        <td>00009</td>
+        <td>700 Michigan Ave, Chicago IL, 60560</td>
+        </tr>
+            
+              <tr>
+        <td>00010</td>
+        <td>888 State Street, Chicago IL, 60560</td>
+        </tr>
+              
+            <tr>
+        <td>00011</td>
+        <td>785 Peterborough Drive, Boston MA, 20046</td>
+        </tr>
+            
+            <tr>
+        <td>00012</td>
+        <td>677 Smiley Road, Portland ME, 00012</td>
+        </tr>
+            
+            <tr>
+        <td>00013</td>
+        <td>7 E Rodeo Drive, Seattle WA, 67298</td>
+        </tr>
+            
+            <tr>
+        <td>00014</td>
+        <td>55 S Circle Drive, West Covina CA, 29192</td>
+        </tr>
+            
+            <tr>
+        <td>00015</td>
+        <td>909 Poe Ave, Monterrey CA, 29131</td>
+        </tr>
+            
+            <tr>
+        <td>00016</td>
+        <td>2022 James Madison Drive, Columbus OH, 43201</td>
+        </tr>
+            
+            <tr>
+        <td>00017</td>
+        <td>8888 Chaucer St, Naperville IL, 60564</td>
+        </tr>
+            
+            <tr>
+        <td>00018</td>
+        <td>2768 Main St, Des Moines IA, 28947</td>
+        </tr>
+            
+            <tr>
+        <td>00019</td>
+        <td>3024 Clover Drive, Tulsa OK, 74421</td>
+        </tr>
+      
+                </table>
+            </div>
+        </div>
+        
+        <script>
+            
+            var rIndex,
+                table = document.getElementById("table");
+            
+            
+            // add Row
+            function addHtmlTableRow()
+            {
+                // get the table by id
+                // create a new row and cells
+                // get value from input text
+                // set the values into row cell's
+               
+                var newRow = table.insertRow(table.length),
+                    cell1 = newRow.insertCell(0),
+                    cell2 = newRow.insertCell(1),
+                    storeid = document.getElementById("storeid").value,
+                    address = document.getElementById("address").value;
+            
+                cell1.innerHTML = storeid;
+                cell2.innerHTML = address;
+                // call the function to set the event to the new row
+                selectedRowToInput();
+            }
+            
+            
+            // display selected row data into input text
+            function selectedRowToInput()
+            {
+                
+                for(var i = 1; i < table.rows.length; i++)
+                {
+                    table.rows[i].onclick = function()
+                    {
+                      // get the seected row index
+                      rIndex = this.rowIndex;
+                      document.getElementById("storeid").value = this.cells[0].innerHTML;
+                      document.getElementById("address").value = this.cells[1].innerHTML;
+                    };
+                }
+            }
+            selectedRowToInput();
+            
+            function editHtmlTbleSelectedRow()
+            {
+                var storeid = document.getElementById("storeid").value,
+                    address = document.getElementById("address").value;
+               
+                table.rows[rIndex].cells[0].innerHTML = storeid;
+                table.rows[rIndex].cells[1].innerHTML = address;
+              
+            }
+            
+            function removeSelectedRow()
+            {
+                table.deleteRow(rIndex);
+                // clear input text
+                document.getElementById("storeid").value = "";
+                document.getElementById("address").value = "";
+            }
+        </script>
+        
+    </body>
+</html>

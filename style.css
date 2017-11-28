@@ -1,0 +1,160 @@
+body {
+    margin:0;
+    padding:0;
+    height:auto;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1090px;
+    min-width: 920px;
+    font-family: 'Century Gothic', sans-serif;
+    
+
+}
+
+h2 {
+    color: #007241;
+}
+
+.index{
+    width: 100%;
+    padding-left: 10;
+}
+
+
+.index a {
+    float: left;
+    -webkit-filter: grayscale(80%);
+    filter: grayscale(80%);
+    text-decoration: none;
+    
+}
+
+.index a:hover {
+    float: left;
+     -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    color: black;
+}
+
+.indexheader p{
+    font-size: 30;
+    font-family: 'Century Gothic', sans-serif;
+    color:#007241;
+    padding-left: 10;
+}
+
+.index p{
+    text-align: center;
+    color:#007241;
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 16;
+    
+}
+
+.texture {
+    padding-top: 30;
+    margin-left: -8
+}
+
+svg {
+    color: #007241;
+    padding-top: 20;
+    margin-left: -10;
+    width: 100%;
+    
+}
+
+.nav {
+    width: 100%;
+}
+
+
+ .topnav {
+    background-color: #FFFFFF;
+    padding-top: 65px;
+    float: right;
+    margin-bottom: -15;
+}
+
+.topnav a {
+    display: inline;
+    color: black;
+    text-decoration: none;
+    padding: 15px 0px 10px 60px;
+    font-size: 13px;
+    font-family: 'Century Gothic', sans-serif;
+}
+
+.logo {
+    float: right;
+    margin-top: -50;
+}
+
+.topnav a:hover {
+    color: #007241;
+}
+
+
+.headerbanner{
+    padding-top: 30;
+}
+
+.tablename h2 {
+    font-family: 'Century Gothic', sans-serif;
+    color:#007241;
+    padding-top: 40px;
+}
+
+table {
+    padding-bottom: 80px;
+}
+
+th {
+    text-align: left;
+    vertical-align: text-top;
+    font-family: 'Century Gothic', sans-serif;
+    font-weight: 100;
+    width: 150px;
+}
+
+td {
+    text-align: left;
+    vertical-align: text-top;
+    font-family: 'Century Gothic', sans-serif;
+    font-weight: 100;
+    width: 150px;
+}
+
+.dataentry p {
+    font-family: 'Century Gothic', sans-serif;
+    padding-bottom: 0px;
+}
+
+input {
+    font-size: 16;
+}
+
+button {
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 16px;
+    color: #007241 ;
+    border: none;
+    background-color: #f9f2ec;
+    padding: 5 10 5 10;
+}
+
+.input{
+    padding: 3;
+    margin-left: 20;
+    float: right;
+}
+
+.datainput {
+    width: 30%;
+}
+
+.teaminfo {
+    margin-top: -50;
+}
+

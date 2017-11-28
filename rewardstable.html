@@ -1,0 +1,203 @@
+<html>
+
+<head>
+<title>Rewards Table | Starbucks</title>
+<link rel = "stylesheet"
+   type = "text/css"
+   href = "style.css" />
+        
+</head>
+
+    <body>
+        
+    <div class="nav">
+<div class="topnav">
+    <a href="datadict.html">DATABASE DICTIONARY</a>
+    <a href="https://starbucks.com">STARBUCKS.COM</a>
+    <a href="more.html">MORE</a>
+    <a href="index.html" class = "logo"><img src="Starbucks-Logo-PNG-File.png" height="80" width="80"></a>
+</div>
+</div>
+    
+<svg height="10" width="10000" style="stroke:rgb(0,0,0);stroke-width:2"> <line x1="0" y1="0" x2="10000" y2="0" style="stroke:rgb(0,114,65);stroke-width:6"/>
+</svg>
+
+        <br><br><br>
+        <div class="container">
+             <div class="tab tab-2">
+                <div class = "datainput">
+                Account ID: <input class = "input" type="text" name="pid" id="pid"><br><br>
+                Creation Date: <input class = "input" type="text" name="pcost" id="pcost"><br><br>
+                Customer ID: <input class = "input"type="text" name="ptype" id="ptype"><br><br>
+                Points Balance: <input class = "input" type="text" name="oid" id="oid"><br><br>
+                </div>
+                 <br><br>
+                
+                <button onclick="addHtmlTableRow();">Add</button>
+                <button onclick="editHtmlTbleSelectedRow();">Edit</button>
+                <button onclick="removeSelectedRow();">Remove</button>
+            </div>
+            <br>
+            <div class="tab tab-1">
+                
+        <br>
+        <hr>
+        <br>
+                
+            <table id="table" border="0" style="width:100%">
+        <tr>
+        <th><b>Account ID</b></th>
+        <th><b>Creation Date</b></th>
+        <th><b>Customer ID</b></th>
+        <th><b>Points Balance</b></th>
+        </tr>
+            
+        <tr>
+        <td>3243</td>
+        <td>11/25/2017</td>
+        <td>001</td>
+        <td>10</td>
+        </tr>
+        
+         <tr>
+        <td>2342</td>
+        <td>11/26/2017</td>
+        <td>002</td>
+        <td>0</td>
+        </tr>
+            
+        <tr>
+        <td>0022</td>
+        <td>08/17/2016</td>
+        <td>003</td>
+        <td>300</td>
+        </tr>
+            
+        <tr>
+        <td>3211</td>
+        <td>01/29/2015</td>
+        <td>004</td>
+        <td>567</td>
+        </tr>
+            
+        <tr>
+        <td>8988</td>
+        <td>04/09/2017</td>
+        <td>005</td>
+        <td>123</td>
+        </tr>
+        
+        <tr>
+        <td>9879</td>
+        <td>01/27/2011</td>
+        <td>006</td>
+        <td>67</td>
+        </tr>
+        
+          <tr>
+        <td>2342</td>
+        <td>02/12/2014</td>
+        <td>007</td>
+        <td>98</td>
+        </tr>
+            
+              
+        <tr>
+        <td>9080</td>
+        <td>05/05/2017</td>
+        <td>007</td>
+        <td>190</td>
+        </tr>
+            
+              
+        <tr>
+        <td>1232</td>
+        <td>02/07/2017</td>
+        <td>007</td>
+        <td>0</td>
+        </tr>
+                </table>
+            </div>
+        </div>
+        
+        <script>
+            
+            var rIndex,
+                table = document.getElementById("table");
+            
+            
+            // add Row
+            function addHtmlTableRow()
+            {
+                // get the table by id
+                // create a new row and cells
+                // get value from input text
+                // set the values into row cell's
+               
+                var newRow = table.insertRow(table.length),
+                    cell1 = newRow.insertCell(0),
+                    cell2 = newRow.insertCell(1),
+                    cell3 = newRow.insertCell(2),
+                    cell4 = newRow.insertCell(3),
+                    pid = document.getElementById("pid").value,
+                    pcost = document.getElementById("pcost").value,
+                    ptype = document.getElementById("ptype").value,
+                    oid = document.getElementById("oid").value;
+                
+                    
+            
+                cell1.innerHTML = pid;
+                cell2.innerHTML = pcost;
+                cell3.innerHTML = ptype;
+                cell4.innerHTML = oid; 
+                // call the function to set the event to the new row
+                selectedRowToInput();
+            }
+            
+            
+            // display selected row data into input text
+            function selectedRowToInput()
+            {
+                
+                for(var i = 1; i < table.rows.length; i++)
+                {
+                    table.rows[i].onclick = function()
+                    {
+                      // get the seected row index
+                      rIndex = this.rowIndex;
+                      document.getElementById("pid").value = this.cells[0].innerHTML;
+                      document.getElementById("pcost").value = this.cells[1].innerHTML;
+                      document.getElementById("ptype").value = this.cells[2].innerHTML;
+                      document.getElementById("oid").value = this.cells[3].innerHTML;
+                    };
+                }
+            }
+            selectedRowToInput();
+            
+            function editHtmlTbleSelectedRow()
+            {
+                var pid = document.getElementById("pid").value,
+                    pcost = document.getElementById("pcost").value,
+                    ptype = document.getElementById("ptype").value,
+                    oid = document.getElementById("oid").value;
+               
+                table.rows[rIndex].cells[0].innerHTML = pid;
+                table.rows[rIndex].cells[1].innerHTML = pcost;
+                table.rows[rIndex].cells[2].innerHTML = ptype;
+                table.rows[rIndex].cells[3].innerHTML = oid;
+              
+            }
+            
+            function removeSelectedRow()
+            {
+                table.deleteRow(rIndex);
+                // clear input text
+                document.getElementById("pid").va.lue = "";
+                document.getElementById("pcost").value = "";
+                document.getElementById("ptype").value = "";
+                document.getElementById("oid").value = "";
+            }
+        </script>
+        
+    </body>
+</html>
