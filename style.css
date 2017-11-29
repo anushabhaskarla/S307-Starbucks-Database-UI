@@ -145,13 +145,13 @@ button {
 }
 
 .input{
-    padding: 3;
+    padding: 3 50 3 10;
     margin-left: 20;
     float: right;
 }
 
 .datainput {
-    width: 30%;
+    width: 60%;
 }
 
 .teaminfo {
