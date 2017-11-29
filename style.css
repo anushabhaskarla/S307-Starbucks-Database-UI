@@ -128,7 +128,6 @@ td {
 
 .dataentry p {
     font-family: 'Century Gothic', sans-serif;
-    padding-bottom: 0px;
 }
 
 input {
@@ -146,12 +145,12 @@ button {
 
 .input{
     padding: 3 50 3 10;
-    margin-left: 20;
     float: right;
 }
 
 .datainput {
     width: 60%;
+    padding-bottom: 20px;
 }
 
 .teaminfo {
